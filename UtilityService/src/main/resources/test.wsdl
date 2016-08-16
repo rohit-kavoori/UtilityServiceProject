@@ -1,0 +1,59 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.displaycustomer.ekthasol.com/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	name="CustomerSoapServiceService" targetNamespace="http://service.displaycustomer.ekthasol.com/">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:ns0="http://service.displaycustomer.ekthasol.com/"
+			targetNamespace="http://service.displaycustomer.ekthasol.com/">
+			<xsd:complexType name="servicePlan">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="servicaplan" type="xsd:string" />
+					<xsd:element name="serviceId" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="getServicePlan" />
+			<xsd:complexType name="getServicePlanResponse">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="return"
+						type="ns0:servicePlan" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getServicePlan" type="ns0:getServicePlan" />
+			<xsd:element name="getServicePlanResponse" type="ns0:getServicePlanResponse" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="getServicePlan">
+		<wsdl:part element="tns:getServicePlan" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getServicePlanResponse">
+		<wsdl:part element="tns:getServicePlanResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:portType name="CustomerSoapService">
+		<wsdl:operation name="getServicePlan">
+			<wsdl:input message="tns:getServicePlan" name="getServicePlan" />
+			<wsdl:output message="tns:getServicePlanResponse" name="getServicePlanResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CustomerSoapServiceServiceSoapBinding"
+		type="tns:CustomerSoapService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getServicePlan">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="getServicePlan">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getServicePlanResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerSoapServiceService">
+		<wsdl:port binding="tns:CustomerSoapServiceServiceSoapBinding"
+			name="CustomerSoapServicePort">
+			<soap:address
+				location="http://localhost:7001/CustomerServiceInfo/services/customer" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
