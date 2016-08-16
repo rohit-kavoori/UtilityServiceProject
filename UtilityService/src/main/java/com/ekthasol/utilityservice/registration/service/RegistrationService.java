@@ -54,7 +54,7 @@ public class RegistrationService {
 			Client client = Client.create();
 
 			WebResource webResource = client
-					.resource("http://localhost:7001/CustomerServiceInfo/resources/customer/" + id);
+					.resource("http://localhost:8080/CustomerServiceInfo/RestWS/customer/" + id);
 			ClientResponse response = webResource.accept("application/json").get(ClientResponse.class);
 			if (response.getStatus() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
