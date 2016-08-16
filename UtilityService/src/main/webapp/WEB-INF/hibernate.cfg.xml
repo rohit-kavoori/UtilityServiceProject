@@ -18,15 +18,7 @@
 
 	
 
-	<bean id="myDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiEnvironment">
-			<props>
-				<prop key="java.naming.factory.initial">weblogic.jndi.WLInitialContextFactory</prop>
-				<prop key="java.naming.provider.url">t3://localhost:7001</prop>
-				<prop key="java.naming.security.principal">weblogic</prop>
-				<prop key="java.naming.security.credentials">Password2014</prop>
-			</props>
-		</property>
+	<bean id="myDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">	
 		<property name="jndiName" value="UtilityServiceDataSource" />
 	</bean>
 
