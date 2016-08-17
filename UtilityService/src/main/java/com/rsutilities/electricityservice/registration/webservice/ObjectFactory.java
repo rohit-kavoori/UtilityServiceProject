@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.ekthasol.utilityservice.registration.webservice package. 
+ * generated in the com.rsutilities.electricityservice.registration.webservice package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -24,11 +24,11 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetServicePlan_QNAME = new QName("http://service.displaycustomer.ekthasol.com/", "getServicePlan");
-    private final static QName _GetServicePlanResponse_QNAME = new QName("http://service.displaycustomer.ekthasol.com/", "getServicePlanResponse");
+    private final static QName _GetServicePlan_QNAME = new QName("http://service.customerservice.rsutilities.com/", "getServicePlan");
+    private final static QName _GetServicePlanResponse_QNAME = new QName("http://service.customerservice.rsutilities.com/", "getServicePlanResponse");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ekthasol.utilityservice.registration.webservice
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.rsutilities.electricityservice.registration.webservice
      * 
      */
     public ObjectFactory() {
@@ -62,7 +62,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetServicePlan }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://service.displaycustomer.ekthasol.com/", name = "getServicePlan")
+    @XmlElementDecl(namespace = "http://service.customerservice.rsutilities.com/", name = "getServicePlan")
     public JAXBElement<GetServicePlan> createGetServicePlan(GetServicePlan value) {
         return new JAXBElement<GetServicePlan>(_GetServicePlan_QNAME, GetServicePlan.class, null, value);
     }
@@ -71,7 +71,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link GetServicePlanResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://service.displaycustomer.ekthasol.com/", name = "getServicePlanResponse")
+    @XmlElementDecl(namespace = "http://service.customerservice.rsutilities.com/", name = "getServicePlanResponse")
     public JAXBElement<GetServicePlanResponse> createGetServicePlanResponse(GetServicePlanResponse value) {
         return new JAXBElement<GetServicePlanResponse>(_GetServicePlanResponse_QNAME, GetServicePlanResponse.class, null, value);
     }
