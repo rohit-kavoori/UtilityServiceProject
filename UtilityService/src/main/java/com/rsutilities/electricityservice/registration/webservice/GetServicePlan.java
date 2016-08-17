@@ -1,5 +1,5 @@
 
-package com.ekthasol.utilityservice.registration.webservice;
+package com.rsutilities.electricityservice.registration.webservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

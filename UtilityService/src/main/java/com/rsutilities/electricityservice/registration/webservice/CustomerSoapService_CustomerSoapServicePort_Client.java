@@ -1,5 +1,5 @@
 
-package com.ekthasol.utilityservice.registration.webservice;
+package com.rsutilities.electricityservice.registration.webservice;
 
 /**
  * Please modify this class to meet your needs

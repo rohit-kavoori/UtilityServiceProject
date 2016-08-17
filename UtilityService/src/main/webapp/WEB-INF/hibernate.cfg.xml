@@ -29,7 +29,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>
-					com.ekthasol.utilityservice.registration.model.Customer
+					com.rsutilities.electricityservice.registration.model.Customer
 				</value>
 			</list>
 		</property>

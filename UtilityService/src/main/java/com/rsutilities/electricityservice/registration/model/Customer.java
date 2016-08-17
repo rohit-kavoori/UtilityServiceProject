@@ -1,4 +1,4 @@
-package com.ekthasol.utilityservice.registration.model;
+package com.rsutilities.electricityservice.registration.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

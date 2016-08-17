@@ -1,5 +1,5 @@
 
-package com.ekthasol.utilityservice.registration.webservice;
+package com.rsutilities.electricityservice.registration.webservice;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;

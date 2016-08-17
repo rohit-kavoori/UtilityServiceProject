@@ -1,4 +1,4 @@
-package com.ekthasol.utilityservice.registration.controller;
+package com.rsutilities.electricityservice.registration.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ekthasol.utilityservice.registration.model.Customer;
-import com.ekthasol.utilityservice.registration.service.RegistrationService;
+import com.rsutilities.electricityservice.registration.model.Customer;
+import com.rsutilities.electricityservice.registration.service.RegistrationService;
+
 
 @Controller
 public class RegistrationController {

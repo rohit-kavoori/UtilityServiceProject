@@ -1,4 +1,4 @@
-package com.ekthasol.utilityservice.registration.webservice;
+package com.rsutilities.electricityservice.registration.webservice;
 
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
@@ -21,5 +21,5 @@ public interface CustomerSoapService {
     @RequestWrapper(localName = "getServicePlan", targetNamespace = "http://service.displaycustomer.ekthasol.com/", className = "com.ekthasol.utilityservice.registration.webservice.GetServicePlan")
     @ResponseWrapper(localName = "getServicePlanResponse", targetNamespace = "http://service.displaycustomer.ekthasol.com/", className = "com.ekthasol.utilityservice.registration.webservice.GetServicePlanResponse")
     @WebResult(name = "return", targetNamespace = "")
-    public java.util.List<com.ekthasol.utilityservice.registration.webservice.ServicePlan> getServicePlan();
+    public java.util.List<ServicePlan> getServicePlan();
 }

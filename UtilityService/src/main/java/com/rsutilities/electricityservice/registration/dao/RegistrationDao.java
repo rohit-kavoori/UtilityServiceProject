@@ -1,4 +1,4 @@
-package com.ekthasol.utilityservice.registration.dao;
+package com.rsutilities.electricityservice.registration.dao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -6,14 +6,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ekthasol.utilityservice.registration.model.Customer;
+import com.rsutilities.electricityservice.registration.model.Customer;
+
 
 public class RegistrationDao {
 	
 	@Autowired
 	SessionFactory mySessionFactory;
 
-	public int insertCustomer(Customer customer) {
+	public int saveCustomer(Customer customer) {
 		int cust_id = 0;
 		Session session = mySessionFactory.openSession();
 		try {

@@ -1,5 +1,5 @@
 
-package com.ekthasol.utilityservice.registration.webservice;
+package com.rsutilities.electricityservice.registration.webservice;
 
 import java.util.ArrayList;
 import java.util.List;

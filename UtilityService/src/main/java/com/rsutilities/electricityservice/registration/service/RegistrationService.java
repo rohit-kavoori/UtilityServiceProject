@@ -1,13 +1,13 @@
-package com.ekthasol.utilityservice.registration.service;
+package com.rsutilities.electricityservice.registration.service;
 
 import java.util.List;
 
-import com.ekthasol.utilityservice.registration.dao.RegistrationDao;
-import com.ekthasol.utilityservice.registration.jms.JmsQueueSender;
-import com.ekthasol.utilityservice.registration.model.Customer;
-import com.ekthasol.utilityservice.registration.webservice.CustomerSoapService;
-import com.ekthasol.utilityservice.registration.webservice.CustomerSoapServiceService;
-import com.ekthasol.utilityservice.registration.webservice.ServicePlan;
+import com.rsutilities.electricityservice.registration.dao.RegistrationDao;
+import com.rsutilities.electricityservice.registration.jms.JmsQueueSender;
+import com.rsutilities.electricityservice.registration.model.Customer;
+import com.rsutilities.electricityservice.registration.webservice.CustomerSoapService;
+import com.rsutilities.electricityservice.registration.webservice.CustomerSoapServiceService;
+import com.rsutilities.electricityservice.registration.webservice.ServicePlan;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -25,7 +25,7 @@ public class RegistrationService {
 	public String insertCustomer(Customer customer) {
 
 		String status = "not registered";
-		int cust_id = registrationDao.insertCustomer(customer);
+		int cust_id = registrationDao.saveCustomer(customer);
 		if(cust_id>0){
 			List<ServicePlan> serviceList = getServicePlan();
 			status = "registered";

@@ -1,4 +1,4 @@
-package com.ekthasol.utilityservice.registration.jms;
+package com.rsutilities.electricityservice.registration.jms;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
