@@ -1,51 +1,62 @@
-<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.displaycustomer.ekthasol.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CustomerSoapServiceService" targetNamespace="http://service.displaycustomer.ekthasol.com/">
-<wsdl:types>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.displaycustomer.ekthasol.com/" elementFormDefault="unqualified" targetNamespace="http://service.displaycustomer.ekthasol.com/" version="1.0">
-<xs:element name="getServicePlan" type="tns:getServicePlan"/>
-<xs:element name="getServicePlanResponse" type="tns:getServicePlanResponse"/>
-<xs:complexType name="getServicePlan">
-<xs:sequence/>
-</xs:complexType>
-<xs:complexType name="getServicePlanResponse">
-<xs:sequence>
-<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:servicePlan"/>
-</xs:sequence>
-</xs:complexType>
-<xs:complexType name="servicePlan">
-<xs:sequence>
-<xs:element minOccurs="0" name="servicaplan" type="xs:string"/>
-<xs:element name="serviceId" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-</xs:schema>
-</wsdl:types>
-<wsdl:message name="getServicePlan">
-<wsdl:part element="tns:getServicePlan" name="parameters"></wsdl:part>
-</wsdl:message>
-<wsdl:message name="getServicePlanResponse">
-<wsdl:part element="tns:getServicePlanResponse" name="parameters"></wsdl:part>
-</wsdl:message>
-<wsdl:portType name="CustomerSoapService">
-<wsdl:operation name="getServicePlan">
-<wsdl:input message="tns:getServicePlan" name="getServicePlan"></wsdl:input>
-<wsdl:output message="tns:getServicePlanResponse" name="getServicePlanResponse"></wsdl:output>
-</wsdl:operation>
-</wsdl:portType>
-<wsdl:binding name="CustomerSoapServiceServiceSoapBinding" type="tns:CustomerSoapService">
-<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-<wsdl:operation name="getServicePlan">
-<soap:operation soapAction="" style="document"/>
-<wsdl:input name="getServicePlan">
-<soap:body use="literal"/>
-</wsdl:input>
-<wsdl:output name="getServicePlanResponse">
-<soap:body use="literal"/>
-</wsdl:output>
-</wsdl:operation>
-</wsdl:binding>
-<wsdl:service name="CustomerSoapServiceService">
-<wsdl:port binding="tns:CustomerSoapServiceServiceSoapBinding" name="CustomerSoapServicePort">
-<soap:address location="http://localhost:8080/CustomerServiceInfo/services/customer"/>
-</wsdl:port>
-</wsdl:service>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.customerservice.rsutilities.com/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	name="CustomerSoapServiceService" targetNamespace="http://service.customerservice.rsutilities.com/">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://service.customerservice.rsutilities.com/"
+			elementFormDefault="unqualified" targetNamespace="http://service.customerservice.rsutilities.com/"
+			version="1.0">
+			<xs:element name="getServicePlan" type="tns:getServicePlan" />
+			<xs:element name="getServicePlanResponse" type="tns:getServicePlanResponse" />
+			<xs:complexType name="getServicePlan">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="getServicePlanResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="return"
+						type="tns:servicePlan" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="servicePlan">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="servicaplan" type="xs:string" />
+					<xs:element name="serviceId" type="xs:int" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getServicePlan">
+		<wsdl:part element="tns:getServicePlan" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getServicePlanResponse">
+		<wsdl:part element="tns:getServicePlanResponse" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="CustomerSoapService">
+		<wsdl:operation name="getServicePlan">
+			<wsdl:input message="tns:getServicePlan" name="getServicePlan"></wsdl:input>
+			<wsdl:output message="tns:getServicePlanResponse" name="getServicePlanResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CustomerSoapServiceServiceSoapBinding"
+		type="tns:CustomerSoapService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getServicePlan">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="getServicePlan">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getServicePlanResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CustomerSoapServiceService">
+		<wsdl:port binding="tns:CustomerSoapServiceServiceSoapBinding"
+			name="CustomerSoapServicePort">
+			<soap:address
+				location="http://localhost:8080/CustomerServiceInfo/SoapWS/customer" />
+		</wsdl:port>
+	</wsdl:service>
 </wsdl:definitions>
