@@ -3,6 +3,7 @@ package com.rsutilities.customerservice.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -15,6 +16,8 @@ import com.rsutilities.customerservice.util.HibernateUtil;
 
 public class CustomerServiceDAO {
 
+	final static Logger logger = Logger.getLogger(CustomerServiceDAO.class);
+	
 	public static Customer getCustomer(int custID) {
 		Customer cust = null;
 		// TODO Auto-generated method stub
