@@ -20,11 +20,11 @@ public class RegistrationController {
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	public ModelAndView handleRequest(@ModelAttribute("customer") Customer customer) {
 
-		String status = registrationSerivce.insertCustomer(customer);
-		if ("registered".equals(status))
-			return new ModelAndView("result");
+		String status = registrationSerivce.saveCustomer(customer);
+		if (!"notRegistered".equals(status))
+			return new ModelAndView("result","status",status);
 		else
-			return new ModelAndView("failure", "message", "Data could not be inserted!!!");
+			return new ModelAndView("failure", "message", "Sorry, could not register. Please try again later!!!");
 	}
 
 }

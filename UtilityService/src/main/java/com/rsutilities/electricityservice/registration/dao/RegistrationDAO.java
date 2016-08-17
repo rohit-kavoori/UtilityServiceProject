@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.rsutilities.electricityservice.registration.model.Customer;
 
 
-public class RegistrationDao {
+public class RegistrationDAO {
 	
 	@Autowired
 	SessionFactory mySessionFactory;

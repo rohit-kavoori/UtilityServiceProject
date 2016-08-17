@@ -17,16 +17,16 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<bean id="registrationDao" class="com.rsutilities.electricityservice.registration.dao.RegistrationDAO">
+	<bean id="registrationDAO" class="com.rsutilities.electricityservice.registration.dao.RegistrationDAO">
 	
 	</bean>
 	
-	<bean id="registrationService" class="com.rsutilities.electricityservice.registration.service">
-		<constructor-arg name="registrationDao" ref="registrationDao"/>
+	<bean id="registrationService" class="com.rsutilities.electricityservice.registration.service.RegistrationService">
+		<constructor-arg name="registrationDAO" ref="registrationDAO"/>
 		<constructor-arg name="jmsQueueSender" ref="jmsQueueSender"></constructor-arg>
 	</bean>
 	
-	<bean id="jmsQueueSender" class = "com.rsutilities.electricityservice.registration.jms"/>
+	<bean id="jmsQueueSender" class = "com.rsutilities.electricityservice.registration.jms.JmsQueueSender"/>
 	
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 	<mvc:annotation-driven />

@@ -8,26 +8,20 @@
 <title>Success</title>
 </head>
 <body>
-
-	<h2>Registration Successful!!!</h2>
-	<table border="1px">
-		<tr>
-			<td>First Name:</td>
-			<td>${customer.getFirstName()}</td>
-		</tr>
-		<tr>
-			<td>Last Name:</td>
-			<td>${customer.getLastName()}</td>
-		</tr>
-		<tr>
-			<td>Email:</td>
-			<td>${customer.getEmail()}</td>
-		</tr>
-		<tr>
-			<td>User Name:</td>
-			<td>${customer.getUsername()}</td>
-		</tr>
-	</table>
-
+	<fieldset>
+		<legend>
+			<h2>Registration Successful</h2>
+		</legend>
+		<h3>
+			<label>First Name:</label> <label><b>${customer.getFirstName()}</b></label><br>
+			<label>Last Name:</label> <label><b>${customer.getLastName()}</b></label><br>
+			<label>Email:</label> <label><b>${customer.getEmail()}</b></label><br>
+			<label>User Name:</label> <label><b>${customer.getUsername()}</b></label><br>
+			<br> <label>Service Plan Details:</label><br>
+			<div>
+				<b>${status}</b>
+			</div>
+		</h3>
+	</fieldset>
 </body>
 </html>

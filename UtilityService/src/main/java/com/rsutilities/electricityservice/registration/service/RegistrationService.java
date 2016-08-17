@@ -2,7 +2,9 @@ package com.rsutilities.electricityservice.registration.service;
 
 import java.util.List;
 
-import com.rsutilities.electricityservice.registration.dao.RegistrationDao;
+import org.apache.log4j.Logger;
+
+import com.rsutilities.electricityservice.registration.dao.RegistrationDAO;
 import com.rsutilities.electricityservice.registration.jms.JmsQueueSender;
 import com.rsutilities.electricityservice.registration.model.Customer;
 import com.rsutilities.electricityservice.registration.webservice.CustomerSoapService;
@@ -14,24 +16,26 @@ import com.sun.jersey.api.client.WebResource;
 
 public class RegistrationService {
 
-	RegistrationDao registrationDao;
+	final static Logger logger = Logger.getLogger(RegistrationService.class);
+	RegistrationDAO registrationDAO;
 	JmsQueueSender jmsQueueSender;
 
-	public RegistrationService(RegistrationDao registrationDao, JmsQueueSender jmsQueueSender) {
-		this.registrationDao = registrationDao;
+	public RegistrationService(RegistrationDAO registrationDAO, JmsQueueSender jmsQueueSender) {
+		this.registrationDAO = registrationDAO;
 		this.jmsQueueSender = jmsQueueSender;
 	}
 
-	public String insertCustomer(Customer customer) {
+	public String saveCustomer(Customer customer) {
 
-		String status = "not registered";
-		int cust_id = registrationDao.saveCustomer(customer);
+		String status = "notRegistered";
+		int cust_id = registrationDAO.saveCustomer(customer);
 		if(cust_id>0){
 			List<ServicePlan> serviceList = getServicePlan();
-			status = "registered";
 			System.out.println(serviceList.get(0).getServiceId());
 			Customer cust = getCustomerDetails(cust_id);
 			jmsQueueSender.sendMessage(String.valueOf(cust.getId()) + " " + String.valueOf(serviceList.get(0).getServiceId()));
+			status = "Service Plan ID: " + serviceList.get(0).getServiceId() + " and Service Plan:" + serviceList.get(0).getServicaplan();
+			logger.info("Customer is registered");
 		}
 		return status;
 	}
