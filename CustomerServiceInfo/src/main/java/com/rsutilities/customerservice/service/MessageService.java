@@ -1,6 +1,6 @@
-package com.ekthasol.displaycustomer.service;
+package com.rsutilities.customerservice.service;
 
-import com.ekthasol.displaycustomer.dao.MessageServiceDAO;
+import com.rsutilities.customerservice.dao.MessageServiceDAO;
 
 public class MessageService {
 

@@ -1,18 +1,17 @@
-package com.ekthasol.displaycustomer.dao;
+package com.rsutilities.customerservice.dao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-import com.ekthasol.displaycustomer.model.Customer;
-import com.ekthasol.displaycustomer.util.HibernateUtil;
+import com.rsutilities.customerservice.model.Customer;
+import com.rsutilities.customerservice.util.HibernateUtil;
+
 
 public class MessageServiceDAO {
 
 	public int saveCustomerService(int c_id, int serv_id) {
 
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		// Customer cust = new Customer();
-
 		session.getTransaction().begin();
 		int row = 0;
 		try {

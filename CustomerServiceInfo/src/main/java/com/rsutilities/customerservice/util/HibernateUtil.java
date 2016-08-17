@@ -1,4 +1,4 @@
-package com.ekthasol.displaycustomer.util;
+package com.rsutilities.customerservice.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

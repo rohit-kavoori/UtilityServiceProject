@@ -23,8 +23,8 @@
         <property name="show_sql">true</property>
 
         <!-- Mapping files -->
-        <mapping class="com.ekthasol.displaycustomer.model.ServicePlan"/>
-        <mapping class="com.ekthasol.displaycustomer.model.Customer"/>
+        <mapping class="com.rsutilities.customerservice.model.ServicePlan"/>
+        <mapping class="com.rsutilities.customerservice.model.Customer"/>
     </session-factory>
 
 </hibernate-configuration>

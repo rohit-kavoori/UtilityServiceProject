@@ -1,4 +1,4 @@
-package com.ekthasol.displaycustomer.model;
+package com.rsutilities.customerservice.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

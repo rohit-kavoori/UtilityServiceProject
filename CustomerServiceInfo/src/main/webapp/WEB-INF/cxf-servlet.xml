@@ -7,7 +7,7 @@
 
 	<jaxws:server id="customerWS" address="/customer">
 		<jaxws:serviceBean>
-		<bean class = "com.ekthasol.displaycustomer.service.CustomerSoapService"></bean>
+		<bean class = "com.rsutilities.customerservice.service"></bean>
 		</jaxws:serviceBean>
 	</jaxws:server>
 	

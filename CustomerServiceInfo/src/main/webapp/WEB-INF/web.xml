@@ -16,7 +16,7 @@
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value> com.ekthasol.displaycustomer.service</param-value>
+			<param-value>com.rsutilities.customerservice.service</param-value>
 		</init-param>
 		<init-param>
 			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
@@ -39,7 +39,7 @@
 
 	<servlet-mapping>
 		<servlet-name>CXFServlet</servlet-name>
-		<url-pattern>/services/*</url-pattern>
+		<url-pattern>/SoapWS/*</url-pattern>
 	</servlet-mapping>
 	
 	<servlet-mapping>

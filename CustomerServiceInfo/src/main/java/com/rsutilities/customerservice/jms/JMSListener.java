@@ -1,4 +1,4 @@
-package com.ekthasol.displaycustomer.jms;
+package com.rsutilities.customerservice.jms;
 
 import javax.jms.JMSException;
 import javax.jms.MessageProducer;
@@ -9,7 +9,8 @@ import org.apache.activemq.command.ActiveMQTextMessage;
 import org.springframework.jms.listener.SessionAwareMessageListener;
 import org.springframework.stereotype.Component;
 
-import com.ekthasol.displaycustomer.service.MessageService;
+import com.rsutilities.customerservice.service.MessageService;
+
 
 
 

@@ -1,4 +1,4 @@
-package com.ekthasol.displaycustomer.dao;
+package com.rsutilities.customerservice.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +8,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.ekthasol.displaycustomer.model.Customer;
-import com.ekthasol.displaycustomer.model.ServicePlan;
-import com.ekthasol.displaycustomer.util.HibernateUtil;
+import com.rsutilities.customerservice.model.Customer;
+import com.rsutilities.customerservice.model.ServicePlan;
+import com.rsutilities.customerservice.util.HibernateUtil;
 
-public class CustomerDAO {
+
+public class CustomerServiceDAO {
 
 	public static Customer getCustomer(int custID) {
 		Customer cust = null;
