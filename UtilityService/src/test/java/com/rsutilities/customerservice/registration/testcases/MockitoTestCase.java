@@ -1,13 +1,14 @@
-package com.ekthasol.utilityservice.registration.testcases;
+package com.rsutilities.customerservice.registration.testcases;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.ekthasol.utilityservice.registration.model.Customer;
-import com.ekthasol.utilityservice.registration.service.RegistrationService;
+import com.rsutilities.electricityservice.registration.model.Customer;
+import com.rsutilities.electricityservice.registration.service.RegistrationService;
+
 
 public class MockitoTestCase {
 

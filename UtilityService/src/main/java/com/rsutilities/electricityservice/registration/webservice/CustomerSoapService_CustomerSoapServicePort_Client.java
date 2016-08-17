@@ -50,7 +50,7 @@ public final class CustomerSoapService_CustomerSoapServicePort_Client {
         
         {
         System.out.println("Invoking getServicePlan...");
-        java.util.List<com.ekthasol.utilityservice.registration.webservice.ServicePlan> _getServicePlan__return = port.getServicePlan();
+        java.util.List<ServicePlan> _getServicePlan__return = port.getServicePlan();
         System.out.println("getServicePlan.result=" + _getServicePlan__return);
 
 
