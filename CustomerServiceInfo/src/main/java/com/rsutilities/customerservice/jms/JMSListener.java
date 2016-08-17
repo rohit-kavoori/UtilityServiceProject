@@ -11,9 +11,6 @@ import org.springframework.stereotype.Component;
 
 import com.rsutilities.customerservice.service.MessageService;
 
-
-
-
 @Component("JMSListener")
 public class JMSListener implements SessionAwareMessageListener<TextMessage> {
 
