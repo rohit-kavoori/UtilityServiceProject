@@ -259,7 +259,7 @@
 										<extraarg>-client</extraarg>
 										<extraarg>-verbose</extraarg>
 										<extraarg>-p</extraarg>
-										<extraarg>http://service.displaycustomer.ekthasol.com/=com.ekthasol.utilityservice.registration.webservice</extraarg>
+										<extraarg>http://service.customerservice.rsutilities.com/=com.rsutilities.electricityservice.registration.webservice</extraarg>
 									</extraargs>
 								</wsdlOption>
 							</wsdlOptions>
