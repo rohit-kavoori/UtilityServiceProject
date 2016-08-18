@@ -28,7 +28,7 @@ public class CustomerService {
 		String[] result = null;
 		int cust_id = registrationDAO.insertCustomer(customer);
 		if (cust_id > 0) {
-			List<ServicePlan> serviceList = getServicePlan();
+			List<ServicePlan> serviceList = getServicePlans();
 			jmsQueueSender.sendMessage(
 					String.valueOf(cust_id) + " " + String.valueOf(serviceList.get(0).getServiceId()));
 			Customer cust = getCustomerDetails(cust_id);
@@ -38,7 +38,7 @@ public class CustomerService {
 		return result;
 	}
 
-	public List<ServicePlan> getServicePlan() {
+	public List<ServicePlan> getServicePlans() {
 
 		CustomerSoapServiceService customerSoapService = new CustomerSoapServiceService();
 
@@ -54,7 +54,7 @@ public class CustomerService {
 	 * @return Rest call to get the customer details from the
 	 *         CustomerServiceInfo application
 	 */
-	public Customer getCustomerDetails(Integer id) {
+	public Customer getCustomerDetails(int id) {
 
 		Customer cust = null;
 		try {
