@@ -3,7 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-	<display-name>UtilityWebService</display-name>
+	<display-name>CustomerServiceInfo</display-name>
 
 	<servlet>
 		<servlet-name>CXFServlet</servlet-name>
@@ -24,7 +24,6 @@
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
-	
 	
 	<servlet>
 		<servlet-name>spring</servlet-name>

@@ -13,14 +13,13 @@
 			<h2>Registration Successful</h2>
 		</legend>
 		<h3>
-			<label>First Name:</label> <label><b>${customer.getFirstName()}</b></label><br>
-			<label>Last Name:</label> <label><b>${customer.getLastName()}</b></label><br>
-			<label>Email:</label> <label><b>${customer.getEmail()}</b></label><br>
-			<label>User Name:</label> <label><b>${customer.getUsername()}</b></label><br>
+			<label>First Name:</label> <label><b>${result[0]}</b></label><br>
+			<label>Last Name:</label> <label><b>${result[1]}</b></label><br>
+			<label>Email:</label> <label><b>${result[2]}</b></label><br>
+			<label>User Name:</label> <label><b>${result[3]}</b></label><br>
 			<br> <label>Service Plan Details:</label><br>
-			<div>
-				<b>${status}</b>
-			</div>
+			<label>Service ID:</label> <label><b>${result[4]}</b></label><br>
+			<label>Service Plan:</label> <label><b>${result[5]}</b></label>
 		</h3>
 	</fieldset>
 </body>

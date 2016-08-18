@@ -12,14 +12,16 @@ import com.rsutilities.electricityservice.registration.model.Customer;
 public class RegistrationDAO {
 	
 	@Autowired
-	SessionFactory mySessionFactory;
+	SessionFactory sessionFactory;
 
-	public int saveCustomer(Customer customer) {
+	public int insertCustomer(Customer customer) {
+		
 		int cust_id = 0;
-		Session session = mySessionFactory.openSession();
+		Session session = sessionFactory.openSession();
+		
 		try {
 			Transaction trans = session.beginTransaction();
-			cust_id = (Integer) session.save(customer);
+			cust_id = (int) session.save(customer);
 			trans.commit();
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block

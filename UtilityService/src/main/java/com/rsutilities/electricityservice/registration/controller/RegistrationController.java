@@ -8,21 +8,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.rsutilities.electricityservice.registration.model.Customer;
-import com.rsutilities.electricityservice.registration.service.RegistrationService;
+import com.rsutilities.electricityservice.registration.service.CustomerService;
 
 
 @Controller
 public class RegistrationController {
 
 	@Autowired
-	RegistrationService registrationSerivce;
+	CustomerService customerService;
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	public ModelAndView handleRequest(@ModelAttribute("customer") Customer customer) {
 
-		String status = registrationSerivce.saveCustomer(customer);
-		if (!"notRegistered".equals(status))
-			return new ModelAndView("result","status",status);
+		String[] result = customerService.saveCustomer(customer);
+		if (result != null){
+			return new ModelAndView("result","result",result);
+		}
 		else
 			return new ModelAndView("failure", "message", "Sorry, could not register. Please try again later!!!");
 	}

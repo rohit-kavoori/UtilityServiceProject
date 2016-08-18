@@ -20,8 +20,8 @@
 			</xs:complexType>
 			<xs:complexType name="servicePlan">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="servicaplan" type="xs:string" />
 					<xs:element name="serviceId" type="xs:int" />
+					<xs:element minOccurs="0" name="serviceplan" type="xs:string" />
 				</xs:sequence>
 			</xs:complexType>
 		</xs:schema>

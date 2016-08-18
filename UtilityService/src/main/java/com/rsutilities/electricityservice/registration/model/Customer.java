@@ -7,9 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
 @Entity
 @Table(name = "customer", uniqueConstraints = { @UniqueConstraint(columnNames = "ID") })
 public class Customer {
@@ -46,6 +44,13 @@ public class Customer {
 	private String password;
 	@Column(name = "SERVICE_ID", unique = true, nullable = true)
 	private String serviceID;
+
+	
+	@Override
+	public String toString() {
+		return firstName + "," + lastName + "," + email
+				+ "," + username;
+	}
 
 	public String getServiceID() {
 		return serviceID;
@@ -129,4 +134,5 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 }

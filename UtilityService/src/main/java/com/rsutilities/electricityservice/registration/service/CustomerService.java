@@ -2,8 +2,6 @@ package com.rsutilities.electricityservice.registration.service;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.rsutilities.electricityservice.registration.dao.RegistrationDAO;
 import com.rsutilities.electricityservice.registration.jms.JmsQueueSender;
 import com.rsutilities.electricityservice.registration.model.Customer;
@@ -14,30 +12,30 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-public class RegistrationService {
+public class CustomerService {
 
-	final static Logger logger = Logger.getLogger(RegistrationService.class);
 	RegistrationDAO registrationDAO;
 	JmsQueueSender jmsQueueSender;
 
-	public RegistrationService(RegistrationDAO registrationDAO, JmsQueueSender jmsQueueSender) {
+	public CustomerService(RegistrationDAO registrationDAO, JmsQueueSender jmsQueueSender) {
 		this.registrationDAO = registrationDAO;
 		this.jmsQueueSender = jmsQueueSender;
 	}
 
-	public String saveCustomer(Customer customer) {
+	public String[] saveCustomer(Customer customer) {
 
-		String status = "notRegistered";
-		int cust_id = registrationDAO.saveCustomer(customer);
-		if(cust_id>0){
+		String str = null;
+		String[] result = null;
+		int cust_id = registrationDAO.insertCustomer(customer);
+		if (cust_id > 0) {
 			List<ServicePlan> serviceList = getServicePlan();
-			System.out.println(serviceList.get(0).getServiceId());
+			jmsQueueSender.sendMessage(
+					String.valueOf(cust_id) + " " + String.valueOf(serviceList.get(0).getServiceId()));
 			Customer cust = getCustomerDetails(cust_id);
-			jmsQueueSender.sendMessage(String.valueOf(cust.getId()) + " " + String.valueOf(serviceList.get(0).getServiceId()));
-			status = "Service Plan ID: " + serviceList.get(0).getServiceId() + " and Service Plan:" + serviceList.get(0).getServicaplan();
-			logger.info("Customer is registered");
+			str =  cust.toString() + "," + serviceList.get(0).getServiceId() + "," + serviceList.get(0).getServiceplan();
+			result = str.split(",");
 		}
-		return status;
+		return result;
 	}
 
 	public List<ServicePlan> getServicePlan() {
@@ -51,6 +49,11 @@ public class RegistrationService {
 		return serviceList;
 	}
 
+	/**
+	 * @param id
+	 * @return Rest call to get the customer details from the
+	 *         CustomerServiceInfo application
+	 */
 	public Customer getCustomerDetails(Integer id) {
 
 		Customer cust = null;
@@ -63,13 +66,11 @@ public class RegistrationService {
 			if (response.getStatus() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 			}
-
-			System.out.println("Output from Server .... \n");
 			cust = response.getEntity(Customer.class);
-			System.out.println(cust.getFirstName());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return cust;
 	}
+
 }

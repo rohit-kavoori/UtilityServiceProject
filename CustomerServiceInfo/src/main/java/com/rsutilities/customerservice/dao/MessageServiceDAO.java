@@ -6,28 +6,30 @@ import org.hibernate.Session;
 import com.rsutilities.customerservice.model.Customer;
 import com.rsutilities.customerservice.util.HibernateUtil;
 
-
+/**
+ * @author Rohit Kavoori
+ * JMS service DAO class to update the service plan id for the given customer id
+ * in the database. 
+ */
 public class MessageServiceDAO {
 
-	public int saveCustomerService(int c_id, int serv_id) {
+	/**
+	 * Method to update service plan id for the given customer id in the database.
+	 * @param custID
+	 * @param serviceID
+	 */
+	public void updateCustomer(int custID, int serviceID) {
 
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		session.getTransaction().begin();
-		int row = 0;
+		Session session = HibernateUtil.getSession();
+		
 		try {
-
-			Customer cust = (Customer) session.get(Customer.class, c_id);
-			cust.setServiceID(String.valueOf(serv_id));
-			System.out.println(cust.getServiceID());
+			session.getTransaction().begin();
+			Customer cust = (Customer) session.get(Customer.class, custID);
+			cust.setServiceID(String.valueOf(serviceID));
 			session.update(cust);
-
-			System.out.println(row);
 			session.getTransaction().commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
-
-			session.close();
 		}
-		return row;
 	}
 }

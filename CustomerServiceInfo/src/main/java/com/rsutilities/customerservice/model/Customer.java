@@ -7,9 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+/**
+ * @author Rohit Kavoori
+ * Customer entity class.
+ */
 @Entity
 @Table(name="CUSTOMER", uniqueConstraints = {@UniqueConstraint(columnNames = "ID")})
 public class Customer {

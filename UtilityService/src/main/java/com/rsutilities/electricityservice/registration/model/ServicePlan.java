@@ -16,33 +16,27 @@ public class ServicePlan {
 	@Column(name = "SERVICE_PLAN", nullable = true)
 	private String servicePlan;
 
-	/**
-	 * @return the serviceId
-	 */
 	public int getServiceId() {
 		return serviceId;
 	}
 
-	/**
-	 * @return the servicaplan
-	 */
-	public String getServicaplan() {
-		return servicePlan;
-	}
-
-	/**
-	 * @param serviceId
-	 *            the serviceId to set
-	 */
 	public void setServiceId(int serviceId) {
 		this.serviceId = serviceId;
 	}
 
-	/**
-	 * @param servicePlan
-	 *            the serviceplan to set
-	 */
-	public void setServicaplan(String servicePlan) {
+	public String getServicePlan() {
+		return servicePlan;
+	}
+
+	public void setServicePlan(String servicePlan) {
 		this.servicePlan = servicePlan;
 	}
+
+	@Override
+	public String toString() {
+		return "ServicePlan [serviceId=" + serviceId + ", servicePlan=" + servicePlan + "]";
+	}
+	
+	
+
 }

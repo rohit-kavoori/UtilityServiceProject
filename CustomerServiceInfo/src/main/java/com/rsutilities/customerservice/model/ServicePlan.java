@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author Rohit Kavoori
+ * Entity class for service plan
+ */
 @Entity
 @Table(name = "serviceplan")
 public class ServicePlan {
@@ -24,7 +28,7 @@ public class ServicePlan {
 	/**
 	 * @return the servicaplan
 	 */
-	public String getServicaplan() {
+	public String getServiceplan() {
 		return servicePlan;
 	}
 	/**
@@ -36,7 +40,7 @@ public class ServicePlan {
 	/**
 	 * @param servicePlan the serviceplan to set
 	 */
-	public void setServicaplan(String servicePlan) {
+	public void setServiceplan(String servicePlan) {
 		this.servicePlan = servicePlan;
 	}
 }

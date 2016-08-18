@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import com.rsutilities.electricityservice.registration.model.Customer;
-import com.rsutilities.electricityservice.registration.service.RegistrationService;
+import com.rsutilities.electricityservice.registration.service.CustomerService;
 
 
 public class MockitoTestCase {
@@ -20,7 +20,7 @@ public class MockitoTestCase {
 		customer.setEmail("rohitkavoori@gmail.com");
 		customer.setUsername("rkavoori");
 		
-		RegistrationService rsg = Mockito.mock(RegistrationService.class);
+		CustomerService rsg = Mockito.mock(CustomerService.class);
 		
 		when(rsg.getCustomerDetails(1)).thenReturn(customer);
 		

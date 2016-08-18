@@ -16,15 +16,13 @@
 	<context:annotation-config />
 	<mvc:annotation-driven />
 
-	
-
-	<bean id="myDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
 		<property name="jndiName" value="UtilityServiceDataSource" />
 	</bean>
 
-	<bean id="mySessionFactory"
+	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="myDataSource" />
+		<property name="dataSource" ref="dataSource" />
 
 		<property name="annotatedClasses">
 			<list>
@@ -45,7 +43,7 @@
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="mySessionFactory" />
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 </beans>

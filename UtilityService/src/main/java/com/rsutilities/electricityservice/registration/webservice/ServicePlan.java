@@ -16,8 +16,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="servicaplan" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="serviceId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="serviceplan" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,37 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "servicePlan", propOrder = {
-    "servicaplan",
-    "serviceId"
+    "serviceId",
+    "serviceplan"
 })
 public class ServicePlan {
 
-    protected String servicaplan;
     protected int serviceId;
-
-    /**
-     * Gets the value of the servicaplan property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getServicaplan() {
-        return servicaplan;
-    }
-
-    /**
-     * Sets the value of the servicaplan property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setServicaplan(String value) {
-        this.servicaplan = value;
-    }
+    protected String serviceplan;
 
     /**
      * Gets the value of the serviceId property.
@@ -74,6 +50,30 @@ public class ServicePlan {
      */
     public void setServiceId(int value) {
         this.serviceId = value;
+    }
+
+    /**
+     * Gets the value of the serviceplan property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getServiceplan() {
+        return serviceplan;
+    }
+
+    /**
+     * Sets the value of the serviceplan property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setServiceplan(String value) {
+        this.serviceplan = value;
     }
 
 }
