@@ -10,7 +10,7 @@ import com.rsutilities.electricityservice.registration.model.Customer;
 import com.rsutilities.electricityservice.registration.service.CustomerService;
 
 
-public class MockitoTestCase {
+public class TestCustomerService {
 
 	@Test
 	public void testGetCustomer() {
