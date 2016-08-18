@@ -8,6 +8,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.rsutilities.customerservice.dao.CustomerRestServiceDAO;
 import com.rsutilities.customerservice.model.Customer;
@@ -19,8 +20,9 @@ import com.rsutilities.customerservice.model.Customer;
 @Path("/customer")
 public class CustomerRestService {
 
+	
 	final static Logger logger = Logger.getLogger(CustomerRestServiceDAO.class);
-
+	
 	/**
 	 * Method to get customer details for the given id from the database.
 	 * @param custID

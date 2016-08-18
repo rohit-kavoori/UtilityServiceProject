@@ -34,8 +34,8 @@ public class JMSListener implements SessionAwareMessageListener<TextMessage> {
 			int c_id = Integer.parseInt(msgAry[0]);
 			int serv_id = Integer.parseInt(msgAry[1]);
 
-			MessageService messService = new MessageService();
-			messService.setCustomerService(c_id, serv_id);
+			MessageService messageService = new MessageService();
+			messageService.setCustomerService(c_id, serv_id);
 
 			/*
 			 * ActiveMQTextMessage textMessage = new ActiveMQTextMessage(); if

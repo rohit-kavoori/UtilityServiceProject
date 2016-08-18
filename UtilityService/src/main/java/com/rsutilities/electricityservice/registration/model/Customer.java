@@ -45,11 +45,9 @@ public class Customer {
 	@Column(name = "SERVICE_ID", unique = true, nullable = true)
 	private String serviceID;
 
-	
 	@Override
 	public String toString() {
-		return firstName + "," + lastName + "," + email
-				+ "," + username;
+		return firstName + "," + lastName + "," + email + "," + username;
 	}
 
 	public String getServiceID() {
