@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import com.rsutilities.customerservice.model.ServicePlan;
 import com.rsutilities.customerservice.util.HibernateUtil;
@@ -26,9 +25,9 @@ public class CustomerSoapServiceDAO {
 		Session session = HibernateUtil.getSession();
 
 		try {
-			Transaction trans = session.beginTransaction();
+			//Transaction trans = session.beginTransaction();
 			servicePlanList = session.createQuery("from ServicePlan").list();
-			trans.commit();
+			//trans.commit();
 
 		} catch (HibernateException e) {
 			e.printStackTrace();

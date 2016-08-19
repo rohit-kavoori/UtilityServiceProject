@@ -15,21 +15,21 @@ public class MessageServiceDAO {
 
 	/**
 	 * Method to update service plan id for the given customer id in the database.
-	 * @param custID
-	 * @param serviceID
+	 * @param c_id
+	 * @param serv_id
 	 */
-	public void updateCustomer(int custID, int serviceID) {
+	public void updateCustomer(int c_id, int serv_id) {
 
 		Session session = HibernateUtil.getSession();
-		
+		//session.getTransaction().begin();
 		try {
-			session.getTransaction().begin();
-			Customer cust = (Customer) session.get(Customer.class, custID);
-			cust.setServiceID(String.valueOf(serviceID));
+			Customer cust = (Customer) session.get(Customer.class, c_id);
+			cust.setServiceID(String.valueOf(serv_id));
 			session.update(cust);
-			session.getTransaction().commit();
+		//	session.getTransaction().commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
+			session.close();
 		}
 	}
 }
