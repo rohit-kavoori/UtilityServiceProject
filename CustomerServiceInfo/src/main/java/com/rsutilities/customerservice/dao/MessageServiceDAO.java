@@ -21,7 +21,7 @@ public class MessageServiceDAO {
 	 */
 	public void updateCustomer(int c_id, int serv_id) {
 
-		Session session = HibernateUtil.getSession();
+		Session session = HibernateUtil.getCurrentSession();
 		
 		try {
 			Transaction trans = session.beginTransaction();
