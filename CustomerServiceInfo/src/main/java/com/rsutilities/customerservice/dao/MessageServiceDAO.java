@@ -31,7 +31,6 @@ public class MessageServiceDAO {
 			trans.commit();
 		} catch (HibernateException e) {
 			e.printStackTrace();
-			session.close();
 		}
 	}
 }

@@ -30,7 +30,7 @@ public class CustomerSoapServiceDAO {
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
-
+		session.flush();
 		return servicePlanList;
 	}
 }
